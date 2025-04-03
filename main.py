@@ -1,4 +1,4 @@
-from stats import get_word_count
+from stats import get_word_count, get_letter_count
 
 def get_book_text(filepath):
     file_contents = None
@@ -11,7 +11,7 @@ def get_book_text(filepath):
 def main():
     #print(get_book_text("books/frankenstein.txt"))
     
-    print(get_word_count("books/frankenstein.txt"))
+    print(get_letter_count("books/frankenstein.txt"))
 
 
 main()
