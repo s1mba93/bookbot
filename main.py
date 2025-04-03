@@ -1,17 +1,20 @@
-from stats import get_word_count, get_letter_count
+from stats import get_word_count, get_letter_dict, get_sorted_chars, get_report
 
 def get_book_text(filepath):
-    file_contents = None
     with open(filepath) as f:
-        file_contents = f.read()
+        return f.read()
         
-    return file_contents
+    
 
 
 def main():
-    #print(get_book_text("books/frankenstein.txt"))
+    book_path = "books/frankenstein.txt"
+    book_text = get_book_text(book_path)
+    word_count = get_word_count(book_text)
+    letter_count = get_letter_dict(book_text)
+    order_dict = get_sorted_chars(letter_count)
     
-    print(get_letter_count("books/frankenstein.txt"))
-
-
+    get_report(book_path, word_count, letter_dict=order_dict)
+    
+    
 main()
